@@ -15,9 +15,12 @@ export function startSimulator(contract = process.env.CONTRACT ?? 'before') {
       res.end(JSON.stringify({ error: { message: 'unauthorized' } }));
       return;
     }
-    const body = { id: decodeURIComponent(match[1]), object: 'model', created: 0 };
-    if (contract === 'after') body.owner_name = 'openai';
-    else body.owned_by = 'openai';
+    const body = {
+      id: decodeURIComponent(match[1]),
+      object: 'model',
+      created: 0,
+      ...(contract === 'after' ? { owner_name: 'openai' } : { owned_by: 'openai' }),
+    };
     res.writeHead(200, { 'content-type': 'application/json' });
     res.end(JSON.stringify(body));
   });
