@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "OpenAI API (demo subset)",
+    "version": "2.3.0",
+    "description": "SIMULATED change for Refit testing, not an OpenAI release."
+  },
+  "servers": [
+    {
+      "url": "https://api.openai.com/v1"
+    }
+  ],
+  "paths": {
+    "/models/{model}": {
+      "get": {
+        "operationId": "retrieveModel",
+        "summary": "Retrieve a model",
+        "parameters": [
+          {
+            "name": "model",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Model"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Model": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "object": {
+            "type": "string",
+            "enum": [
+              "model"
+            ]
+          },
+          "created": {
+            "type": "integer"
+          },
+          "owned_by": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "object",
+          "created",
+          "owned_by"
+        ]
+      }
+    }
+  }
+}
