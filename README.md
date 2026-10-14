@@ -1,14 +1,5 @@
 # openai-api-test
 
-Minimal example that calls the OpenAI API with the official Node SDK.
-
-```sh
-npm install
-OPENAI_API_KEY=sk-... npm start
-```
-
-Optionally set `OPENAI_MODEL` (default `gpt-4o-mini`).
-
 ## Offline tests and the simulated change
 
 `src/models.js` wraps two calls to `client.models.retrieve()`. The tests in `test/` run against a local `node:http` simulator, so they make no real network calls and need no real API key.
