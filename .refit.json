@@ -1,0 +1,12 @@
+{
+  "formatVersion": 1,
+  "apiVersion": "2.3.0",
+  "before": "./docs/contracts/before.json",
+  "after": "./docs/contracts/after.json",
+  "providerConfig": "./refit/provider.json",
+  "fullDiff": true,
+  "image": "node:22-alpine",
+  "prepareDependencies": true,
+  "baselineCommand": ["npm", "test"],
+  "command": ["npm", "run", "test:after"]
+}
