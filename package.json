@@ -1,13 +1,10 @@
 {
-  "name": "refit-openai-demo",
+  "name": "openai-api-test",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=22" },
   "scripts": {
-    "openai": "node openai-test.js",
-    "test": "CONTRACT=before node --test",
-    "test:after": "CONTRACT=after node --test"
+    "start": "node openai-test.js"
   },
   "dependencies": { "openai": "7.32.0" }
 }
