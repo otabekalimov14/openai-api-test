@@ -5,6 +5,7 @@
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
+    "openai": "node openai-test.js",
     "test": "CONTRACT=before node --test",
     "test:after": "CONTRACT=after node --test"
   },
