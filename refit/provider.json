@@ -1,0 +1,7 @@
+{
+  "id": "openai",
+  "packageName": "openai",
+  "defaultImport": true,
+  "namedExport": "OpenAI",
+  "operations": [{ "resource": "models", "method": "retrieve", "schema": "Model" }]
+}
